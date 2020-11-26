@@ -3,6 +3,16 @@ Docker image for Nerves development
 
 ## Quick start
 
+### from DockerHub repository
+
+```Shell
+$ docker pull nervesjp/nerves
+$ docker run -it -w /workspace nervesjp/nerves
+root@6e304327bd2e:/workspace# 
+```
+
+### from GitHub repository
+
 ```Shell
 $ git clone https://github.com/NervesJP/docker-nerves
 $ cd docker-nerves
