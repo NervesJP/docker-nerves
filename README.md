@@ -75,4 +75,4 @@ $ cd <your_nerves_project_dir>
 $ fwup _build/${MIX_TARGET}_dev/nerves/images/<project_name>.fw
 ```
 
-Please let us know if you have a cool solution!
+Please let us know if you have a cool solution! (issue [#1](https://github.com/NervesJP/docker-nerves/issues/1))
