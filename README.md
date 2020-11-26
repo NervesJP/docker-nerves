@@ -1,6 +1,13 @@
 # docker-nerves
 Docker image for Nerves development
 
+## NOTE for ALGYAN hands-on
+
+This branch is prepared for ALGYAN hands-on. Some processes are added to make the hands-on process more efficient.
+
+- Download archives of Nerves artifacts on Docker build process
+- Append some environmental variables for hands-on
+
 ## Quick start
 
 ### from DockerHub repository
