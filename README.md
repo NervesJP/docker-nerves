@@ -32,7 +32,7 @@ hex-0.20.6  nerves_bootstrap-1.10.0
 
 ## Expected tools/versions to be installed
 
-### v0.1
+### [v0.1 on DockerHub](https://hub.docker.com/layers/nervesjp/nerves/0.1/images/sha256-034b6faa69a51d3130fc6b5001cff82a3850af0320060971f6f9aec9a19a655a?context=explore)
 
 - Debian 10.6
 - Erlang/OTP 23.1.3
