@@ -39,6 +39,15 @@ RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releas
 RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/nerves_system_rpi4/releases/download/v1.13.1/nerves_system_rpi4-portable-1.13.1-C916C86.tar.gz
 RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releases/download/v1.3.2/nerves_toolchain_aarch64_unknown_linux_gnu-linux_x86_64-1.3.2-7C57FE3.tar.xz
 
+# COPY SSH keys (id_rsa / id_rsa.pub) to `/root/.ssh/` on Docker dev-container
+# Of course we understand that sharing SSH keys on GitHubit is dangerous, but
+# we employ this way to make the hands-on process more efficient.
+RUN mkdir -p /root/.ssh
+COPY .ssh/id_rsa /root/.ssh/
+RUN chmod 600 /root/.ssh/id_rsa
+COPY .ssh/id_rsa.pub /root/.ssh/
+COPY .ssh/config /root/.ssh/
+
 # Append some environmental variables for hands-on
 RUN echo "export PS1=\"\n\[\033[0;32m\]\u@\h \[\033[0;33m\]\w\n\\[\033[0m\]# \[\033[0m\]\"" >> ~/.bashrc
 RUN echo "export MIX_TARGET=rpi4" >> ~/.bashrc
