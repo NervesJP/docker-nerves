@@ -47,6 +47,7 @@ COPY .ssh/id_rsa /root/.ssh/
 RUN chmod 600 /root/.ssh/id_rsa
 COPY .ssh/id_rsa.pub /root/.ssh/
 COPY .ssh/config /root/.ssh/
+RUN chmod 600 /root/.ssh/config
 
 # Append some environmental variables for hands-on
 RUN echo "export PS1=\"\n\[\033[0;32m\]\u@\h \[\033[0;33m\]\w\n\\[\033[0m\]# \[\033[0m\]\"" >> ~/.bashrc
