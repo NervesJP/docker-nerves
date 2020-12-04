@@ -53,7 +53,7 @@ Each version number is for a pre-built image on Docker Hub. If you built Docker 
 ### v0.1.x on Docker Hub
 
 - Debian 10.6 (`cat /etc/debian_version`)
-- Erlang/OTP 23.1.3 (`erl -V`)
+- Erlang/OTP 23.1.4 (`erl -V`)
 - Elixir 1.11.2-otp-23 (`elixir -v`)
 - Nerves 1.7.0 (`ls ~/.mix/*`)
   - hex 0.20.6
