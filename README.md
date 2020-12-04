@@ -86,7 +86,7 @@ Docker has restrict policies to avoid effecting host environment. Therefore, `mi
 One way to burn Nerves firmware is just operating `fwup` on the host. `fwup` is an utility for constructing/burning Nerves firmware.  
 https://github.com/fhunleth/fwup
 
-After installing `fwup` on the host according to [this step](https://github.com/fhunleth/fwup#installing), please do following command on the host terminal (e.g., PowerShell as Admininistrator, Terminal.app).
+After installing `fwup` on the host according to [this step](https://github.com/fhunleth/fwup#installing), please do following command on the host terminal (e.g., PowerShell **as Administrator**, Terminal.app).
 
 ```Shell
 $ cd <your_nerves_project_dir>
