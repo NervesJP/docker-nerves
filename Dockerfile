@@ -27,6 +27,6 @@ RUN ln -s fwup /usr/bin/fwup.exe
 RUN mix local.hex --force
 RUN mix local.rebar --force
 # Install Mix environment for Nerves
-RUN mix archive.install hex nerves_bootstrap --force
+RUN mix archive.install hex nerves_bootstrap 1.10.0 --force
 
 CMD ["/bin/bash"]
