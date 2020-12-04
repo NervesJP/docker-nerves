@@ -1,9 +1,23 @@
 # docker-nerves
-Docker image for Nerves development
+
+Dockerfile for Nerves development
+
+## Description
+
+[Nerves](https://www.nerves-project.org/) is now, young, and cool IoT framework with functional language [Elixir](https://elixir-lang.org/).
+
+This Dockerfile enables you to acquire the development environment for Nerves with minimal steps. The Docker solution provides following contributions.
+
+- If you are new to Nerves, you can easily try out its development. Since it is possible to provide a unified environment, it will be convenient for hands-on training.
+- Even if you are already using Nerves, you can quickly try out the latest development environment. Docker does not affect your host environment.
+- [The Docker Hub repository here](https://hub.docker.com/r/nervesjp/nerves) publishes the pre-built image. You can try it right away by just pulling it (but it may not always be up to date).
+- You can also experience a better development environment by using the Visual Studio Code and its extension. See more information: [https://github.com/NervesJP/nerves-devcontainer](https://github.com/NervesJP/nerves-devcontainer)
 
 ## Quick start
 
-### from DockerHub repository
+### from [Docker Hub repository](https://hub.docker.com/r/nervesjp/nerves)
+
+You can try the Nerves development with pre-built image.
 
 ```Shell
 $ docker pull nervesjp/nerves
@@ -11,7 +25,9 @@ $ docker run -it -w /workspace nervesjp/nerves
 root@6e304327bd2e:/workspace# 
 ```
 
-### from GitHub repository
+### from [GitHub repository](https://github.com/NervesJP/docker-nerves)
+
+You can build Docker image locally, and customize it to your needs.
 
 ```Shell
 $ git clone https://github.com/NervesJP/docker-nerves
@@ -32,16 +48,18 @@ hex-0.20.6  nerves_bootstrap-1.10.0
 
 ## Expected tools/versions to be installed
 
-### [v0.1 on DockerHub](https://hub.docker.com/layers/nervesjp/nerves/0.1/images/sha256-034b6faa69a51d3130fc6b5001cff82a3850af0320060971f6f9aec9a19a655a?context=explore)
+Each version number is for a pre-built image on Docker Hub. If you built Docker locally, please check them as described in parentheses.
 
-- Debian 10.6
-- Erlang/OTP 23.1.3
-- Elixir 1.11.2-otp-23
-- Nerves 1.7.0
-    - hex 0.20.6
-    - rebar 2.6.4 / 3.14.2
-    - nerves_bootstrap 1.10.0
-- fwup 1.8.2
+### v0.1.x on Docker Hub
+
+- Debian 10.6 (`cat /etc/debian_version`)
+- Erlang/OTP 23.1.3 (`erl -V`)
+- Elixir 1.11.2-otp-23 (`elixir -v`)
+- Nerves 1.7.0 (`ls ~/.mix/*`)
+  - hex 0.20.6
+  - rebar 2.6.4 / 3.14.2
+  - nerves_bootstrap 1.10.0
+- fwup 1.8.2 (`fwup --version`)
 
 ## Tips
 
