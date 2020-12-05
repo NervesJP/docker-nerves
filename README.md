@@ -77,6 +77,16 @@ It is also efficient to mount Nerves related setting files, such as `~/.ssh/` an
 $ docker run -it -w /workspace -v ${PWD}:/workspace  -v ~/.ssh:/root/.ssh -v ~/.nerves:/root/.nerves docker-nerves 
 ```
 
+## Branches and Releases/Tags policy and relationship with Docker Hub Tags
+
+This [GitHub repository](https://github.com/NervesJP/docker-nerves) is associated to [Docker Hub](https://hub.docker.com/r/nervesjp/nerves) to be automatically built images.  
+Followings are our policy to maintain them, and relationship between [Branches](https://github.com/NervesJP/docker-nerves/branches) / [Releases (Tags)](https://github.com/NervesJP/docker-nerves/releases) and [Docker Hub Tags](https://hub.docker.com/r/nervesjp/nerves/tags).
+
+- `main`: Latest version of maintenance. It is associated with `:latest` Docker tag.
+- `dev`: Work in Progress to improve Dockerfile. It is associated with `:dev` Docker tag.
+- `vX.Y`: Releases of Dockerfile and pre-built image. Functional improvements (e.g., bumping of tool versions) have been done to them from previous release. They are associated with `:X.Y` Docker tags.
+- `doc`: Only modification of documentation. It is not associated with Docker tag.
+
 ## Current limitation(s)
 
 ### burn Nerves firmware to microSD card
