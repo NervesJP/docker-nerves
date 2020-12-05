@@ -74,7 +74,7 @@ Since a filesystem into Docker image will disappear when an image rebuild/execut
 $ docker run -it -w /workspace -v ${PWD}:/workspace docker-nerves 
 ```
 
-It is also efficient to mount ElixirNerves related setting directories, such as `.hex/`, `.nerves/` and `.ssh/`.  
+It is also efficient to mount Elixir/Nerves related setting directories, such as `.hex/`, `.nerves/` and `.ssh/`.  
 Following is an example to bind setting files between `${HOME}` on both the host and the image.
 
 ```Shell
