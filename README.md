@@ -11,7 +11,10 @@ This Dockerfile enables you to acquire the development environment for Nerves wi
 - If you are new to Nerves, you can easily try out its development. Since it is possible to provide a unified environment, it will be convenient for hands-on training.
 - Even if you are already using Nerves, you can quickly try out the latest development environment. Docker does not affect your host environment.
 - [The Docker Hub repository here](https://hub.docker.com/r/nervesjp/nerves) publishes the pre-built image. You can try it right away by just pulling it (but it may not always be up to date).
-- You can also experience a better development environment by using the Visual Studio Code and its extension. See more information: [https://github.com/NervesJP/nerves-devcontainer](https://github.com/NervesJP/nerves-devcontainer)
+
+You can also experience a better development environment by using the Visual Studio Code and its extension.   
+*See more information:*  
+[https://github.com/NervesJP/nerves-devcontainer](https://github.com/NervesJP/nerves-devcontainer)
 
 ## Quick start
 
