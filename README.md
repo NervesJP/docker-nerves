@@ -71,10 +71,12 @@ Since a filesystem into Docker image will disappear when an image rebuild/execut
 $ docker run -it -w /workspace -v ${PWD}:/workspace docker-nerves 
 ```
 
-It is also efficient to mount Nerves related setting files, such as `~/.ssh/` and `~/.nerves`. Following is an example to share setting files between host and image.
+It is also efficient to mount ElixirNerves related setting directories, such as `.hex/`, `.nerves/` and `.ssh/`.  
+Following is an example to bind setting files between `${HOME}` on both the host and the image.
 
 ```Shell
-$ docker run -it -w /workspace -v ${PWD}:/workspace  -v ~/.ssh:/root/.ssh -v ~/.nerves:/root/.nerves docker-nerves 
+$ docker run -it -w /workspace -v ${PWD}:/workspace \\
+  -v ~/.hex:/root/.hex -v ~/.nerves:/root/.nerves -v ~/.ssh:/root/.ssh docker-nerves 
 ```
 
 ## Branches and Releases/Tags policy and relationship with Docker Hub Tags
