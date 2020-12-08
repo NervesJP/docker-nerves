@@ -66,6 +66,11 @@ Each version number is for a pre-built image on Docker Hub. If you built the Doc
 
 ## Tips
 
+There are many types of Dockerfile instructions, but this repository is intended to provide only the smallest and most common features. Feel free to customize it for your convenience. If you have a proposal that may be useful in common, please suggest it in Issue or PR.
+
+This section follows some convinient ways to use the Docker environment for Nerves.
+Docker offers many features as [CLI options](https://docs.docker.com/engine/reference/commandline/docker/).
+
 ### Mount volumes on host
 
 Since a filesystem into Docker image will disappear when an image rebuild/execute, it is useful to mount a volume on host to keep files of Nerves project. `-v ${PWD}:/workspace` can mount current directory on host to Docker image.
@@ -80,6 +85,32 @@ Following is an example to bind setting files between `${HOME}` on both the host
 ```shell-session
 $ docker run -it -w /workspace -v ${PWD}:/workspace \\
   -v ~/.hex:/root/.hex -v ~/.nerves:/root/.nerves -v ~/.ssh:/root/.ssh docker-nerves 
+```
+
+### Set environment variables for Nerves development
+
+If your [target of Nerves](https://hexdocs.pm/nerves/targets.html) has been decided and fixed, locking the environment variable `${MIX_TARGET}` is efficient for your development. Here is an example of setting to `rpi3` when runing the Docker container.
+
+```shell-session
+$ docker run -it -w /workspace -e MIX_TARGET=rpi3 docker-nerves 
+root@deda9932d7e3:/workspace# echo $MIX_TARGET
+rpi3
+```
+
+`--env-file` is also efficient if you want to set several variables, e.g., to configure WiFi information with them for vintage_net_wifi. You can learn the detail from ["Connect to a target device" on this article](https://dev.to/mnishiguchi/elixir-nerves-get-started-with-led-blinking-on-raspberry-pi-2l1i).
+
+```shell-session
+$ cat env.list 
+MIX_TARGET=rpi3
+WIFI_SSID=xxxxxxxx
+WIFI_PSK=yyyyyyyy
+$ docker run -it -w /workspace --env-file env.list docker-nerves 
+root@cf815278594a:/workspace# echo $MIX_TARGET
+rpi3
+root@cf815278594a:/workspace# echo $WIFI_SSID
+xxxxxxxx
+root@cf815278594a:/workspace# echo $WIFI_PSK
+yyyyyyyy
 ```
 
 ## Branches and Releases/Tags policy and relationship with Docker Hub Tags
