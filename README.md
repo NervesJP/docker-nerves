@@ -51,18 +51,18 @@ hex-0.20.6  nerves_bootstrap-1.10.0
 
 ## Expected tools/versions to be installed
 
-Each version number is for a pre-built image on Docker Hub. If you built Docker locally, please check them as described in parentheses.
+Each version number is for a pre-built image on Docker Hub. If you built the Docker container locally, please check them as described in parentheses.
 
-### v0.1.x on Docker Hub
-
-- Debian 10.6 (`cat /etc/debian_version`)
-- Erlang/OTP 23.1.4 (`erl -V` and `mix hex.info`)
-- Elixir 1.11.2-otp-23 (`elixir -v`)
-- Nerves 1.7.0 (`ls ~/.mix/*`)
-  - hex 0.20.6
-  - rebar 2.6.4 / 3.14.2
-  - nerves_bootstrap 1.10.0
-- fwup 1.8.2 (`fwup --version`)
+| Name | check method(s) | v0.2 | v0.1.x |
+|:---|:---|:---:|:---:|
+| Debain | `cat /etc/debian_version` | 10.6 | 10.6 |
+| Erlang/OTP | `erl -V` <br> `mix hex.info` | 23.1.4 | 23.1.4 |
+| Elixir | `elixir -v` | 1.11.2-otp-23 | 1.11.2-otp-23 |
+| Nerves | `mix nerves.info` | 1.7.1 | 1.7.0 |
+| nerves_bootstrap | `ls ~/.mix/*` | 1.10.0 | 1.10.0 |
+| hex | `ls ~/.mix/*` | 0.20.6 | 0.20.6 |
+| rebar/rebar3 | `rebar -V` <br> `rebar3 -v` | 2.6.4/3.14.2 | 2.6.4/3.14.2 |
+| fwup | `fwup --version` | 1.8.2 | 1.8.2 |
 
 ## Tips
 
