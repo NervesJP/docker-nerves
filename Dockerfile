@@ -20,8 +20,6 @@ RUN wget https://github.com/fhunleth/fwup/releases/download/v${FWUP_VERSION}/fwu
     apt-get install -y ./fwup_${FWUP_VERSION}_amd64.deb && \
     rm ./fwup_${FWUP_VERSION}_amd64.deb && \
     rm -rf /var/lib/apt/lists/*
-# Create (fake) symbolic link for Windows environment
-RUN ln -s fwup /usr/bin/fwup.exe
 
 # Install hex and rebar
 RUN mix local.hex --force
