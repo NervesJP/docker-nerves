@@ -22,7 +22,7 @@ You can also experience a better development environment by using the Visual Stu
 
 You can try the Nerves development with pre-built image.
 
-```Shell
+```shell-session
 $ docker pull nervesjp/nerves
 $ docker run -it -w /workspace nervesjp/nerves
 root@6e304327bd2e:/workspace# 
@@ -32,7 +32,7 @@ root@6e304327bd2e:/workspace#
 
 You can build Docker image locally, and customize it to your needs.
 
-```Shell
+```shell-session
 $ git clone https://github.com/NervesJP/docker-nerves
 $ cd docker-nerves
 
@@ -70,14 +70,14 @@ Each version number is for a pre-built image on Docker Hub. If you built the Doc
 
 Since a filesystem into Docker image will disappear when an image rebuild/execute, it is useful to mount a volume on host to keep files of Nerves project. `-v ${PWD}:/workspace` can mount current directory on host to Docker image.
 
-```Shell
+```shell-session
 $ docker run -it -w /workspace -v ${PWD}:/workspace docker-nerves 
 ```
 
 It is also efficient to mount Elixir/Nerves related setting directories, such as `.hex/`, `.nerves/` and `.ssh/`.  
 Following is an example to bind setting files between `${HOME}` on both the host and the image.
 
-```Shell
+```shell-session
 $ docker run -it -w /workspace -v ${PWD}:/workspace \\
   -v ~/.hex:/root/.hex -v ~/.nerves:/root/.nerves -v ~/.ssh:/root/.ssh docker-nerves 
 ```
@@ -103,7 +103,7 @@ https://github.com/fhunleth/fwup
 
 After installing `fwup` on the host according to [this step](https://github.com/fhunleth/fwup#installing), please do following command on the host terminal (e.g., PowerShell **as Administrator**, Terminal.app).
 
-```Shell
+```shell-session
 $ cd <your_nerves_project_dir>
 $ fwup _build/${MIX_TARGET}_dev/nerves/images/<project_name>.fw
 ```
