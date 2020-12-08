@@ -127,7 +127,8 @@ Followings are our policy to maintain them, and relationship between [Branches](
 
 ### burn Nerves firmware to microSD card
 
-Docker has restrict policies to avoid effecting host environment. Therefore, `mix burn` cannot be operated from Docker image because there is no right to access `/dev` to on host as a root user.
+Docker has restrict policies to avoid effecting host environment. And also, it is not possible to pass through a USB device (or a serial port) to a container as it requires support at the hypervisor level both in [Windows](https://docs.docker.com/docker-for-windows/faqs/#can-i-pass-through-a-usb-device-to-a-container) and [macOS](https://docs.docker.com/docker-for-mac/faqs/#can-i-pass-through-a-usb-device-to-a-container) as the host.  
+Therefore, `mix burn` cannot be operated from Docker image because there is no right to access `/dev` to on host as a root user.
 
 One way to burn Nerves firmware is just operating `fwup` on the host. `fwup` is an utility for constructing/burning Nerves firmware.  
 https://github.com/fhunleth/fwup
@@ -137,6 +138,14 @@ After installing `fwup` on the host according to [this step](https://github.com/
 ```shell-session
 $ cd <your_nerves_project_dir>
 $ fwup _build/${MIX_TARGET}_dev/nerves/images/<project_name>.fw
+```
+
+If you are using Linux as the host, you may be able to access microSD from the Docker environment along with the `privileged` option.
+You may need to use a different `/dev/` address for your purposes.
+
+```shell-session
+$ docker run -it -w /workspace -v ${PWD}:/workspace \\
+  -v /dev/sdb:/dev/sdb --privileged docker-nerves 
 ```
 
 Please let us know if you have a cool solution! ([issue#1](https://github.com/NervesJP/docker-nerves/issues/1))
