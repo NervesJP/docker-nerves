@@ -15,7 +15,7 @@ RUN apt-get update && \
 #    rm -rf /var/lib/apt/lists/*
 
 # Install fwup (https://github.com/fhunleth/fwup)
-ENV FWUP_VERSION="1.8.2"
+ENV FWUP_VERSION="1.8.3"
 RUN wget https://github.com/fhunleth/fwup/releases/download/v${FWUP_VERSION}/fwup_${FWUP_VERSION}_amd64.deb && \
     apt-get install -y ./fwup_${FWUP_VERSION}_amd64.deb && \
     rm ./fwup_${FWUP_VERSION}_amd64.deb && \
@@ -27,7 +27,7 @@ RUN ln -s fwup /usr/bin/fwup.exe
 RUN mix local.hex --force
 RUN mix local.rebar --force
 # Install Mix environment for Nerves
-RUN mix archive.install hex nerves_bootstrap --force
+RUN mix archive.install hex nerves_bootstrap 1.10.1 --force
 
 # Download archives of Nerves artifacts on Docker build process
 RUN mkdir -p ~/.nerves/dl
@@ -36,8 +36,6 @@ RUN mkdir -p ~/.nerves/dl
 # So we decided to download both versions to avoid confusion on ALGYAN hands-on.
 RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/nerves_system_rpi4/releases/download/v1.13.0/nerves_system_rpi4-portable-1.13.0-366303C.tar.gz
 RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releases/download/v1.3.2/nerves_toolchain_arm_unknown_linux_gnueabihf-linux_x86_64-1.3.2-E31F29C.tar.xz
-RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/nerves_system_rpi4/releases/download/v1.13.1/nerves_system_rpi4-portable-1.13.1-C916C86.tar.gz
-RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releases/download/v1.3.2/nerves_toolchain_aarch64_unknown_linux_gnu-linux_x86_64-1.3.2-7C57FE3.tar.xz
 
 # COPY SSH keys (id_rsa / id_rsa.pub) to `/root/.ssh/` on Docker dev-container
 # Of course we understand that sharing SSH keys on GitHubit is dangerous, but
