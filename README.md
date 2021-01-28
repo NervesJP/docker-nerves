@@ -49,23 +49,23 @@ root@9bc88d0fc7b8:/workspace# ls ~/.mix/*
 /root/.mix/rebar  /root/.mix/rebar3
 
 /root/.mix/archives:
-hex-0.20.6  nerves_bootstrap-1.10.0
+hex-0.21.1  nerves_bootstrap-1.10.1
 ```
 
 ## Expected tools/versions to be installed
 
 Each version number is for a pre-built image on Docker Hub. If you built the Docker container locally, please check them as described in parentheses.
 
-| Name | check method(s) | v0.2.1 | v0.2 | v0.1.x |
-|:---|:---|:---:|:---:|:---:|
-| Debian | `cat /etc/debian_version` | 10.7 | 10.6 | 10.6 |
-| Erlang/OTP | `erl -V` <br> `mix hex.info` | 23.1.5 | 23.1.4 | 23.1.4 |
-| Elixir | `elixir -v` | 1.11.2-otp-23 | 1.11.2-otp-23 | 1.11.2-otp-23 |
-| Nerves | `mix nerves.info` | 1.7.1 | 1.7.1 | 1.7.0 |
-| nerves_bootstrap | `ls ~/.mix/*` | 1.10.1 | 1.10.0 | 1.10.0 |
-| hex | `ls ~/.mix/*` | 0.20.6 | 0.20.6 | 0.20.6 |
-| rebar/rebar3 | `rebar -V` <br> `rebar3 -v` | 2.6.4/3.14.3 | 2.6.4/3.14.2 | 2.6.4/3.14.2 |
-| fwup | `fwup --version` | 1.8.3 | 1.8.2 | 1.8.2 |
+| Name | check method(s) | v0.2.2 | v0.2.1 | v0.2 | v0.1.x |
+|:---|:---|:---:|:---:|:---:|:---:|
+| Debian | `cat /etc/debian_version` | 10.7 | 10.7 | 10.6 | 10.6 |
+| Erlang/OTP | `erl -V` or <br> `mix hex.info` | 23.2.3 | 23.1.5 | 23.1.4 | 23.1.4 |
+| Elixir | `elixir -v` | 1.11.3-otp-23 | 1.11.2-otp-23 | 1.11.2-otp-23 | 1.11.2-otp-23 |
+| Nerves | `mix nerves.info` | 1.7.2 | 1.7.1 | 1.7.1 | 1.7.0 |
+| nerves_bootstrap | `ls ~/.mix/*` | 1.10.1 | 1.10.1 | 1.10.0 | 1.10.0 |
+| hex | `ls ~/.mix/*` | 0.21.1 | 0.20.6 | 0.20.6 | 0.20.6 |
+| rebar/rebar3 | `rebar -V` <br> `rebar3 -v` | 2.6.4/3.14.3 | 2.6.4/3.14.3 | 2.6.4/3.14.2 | 2.6.4/3.14.2 |
+| fwup | `fwup --version` | 1.8.3 | 1.8.3 | 1.8.2 | 1.8.2 |
 
 ## Tips
 
@@ -101,7 +101,7 @@ root@deda9932d7e3:/workspace# echo $MIX_TARGET
 rpi3
 ```
 
-`--env-file` is also efficient if you want to set several variables, e.g., to configure WiFi information with them for vintage_net_wifi. You can learn the detail from ["Connect to a target device" on this article](https://dev.to/mnishiguchi/elixir-nerves-get-started-with-led-blinking-on-raspberry-pi-2l1i).
+`--env-file` is also efficient if you want to set several variables, e.g., to configure WiFi information with them for vintage_net_wifi. You can learn the detail from ["Connect to a target device" section on this article](https://dev.to/mnishiguchi/elixir-nerves-get-started-with-led-blinking-on-raspberry-pi-2l1i).
 
 ```bash
 $ cat env.list
