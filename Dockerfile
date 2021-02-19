@@ -27,4 +27,13 @@ RUN mix local.rebar --force
 # Install Mix environment for Nerves
 RUN mix archive.install hex nerves_bootstrap 1.10.2 --force
 
+# Download archives of Nerves artifacts on Docker build process
+RUN mkdir -p ~/.nerves/dl
+RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/nerves_system_rpi0/releases/download/v1.14.0/nerves_system_rpi0-portable-1.14.0-261E47F.tar.gz
+RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releases/download/v1.4.1/nerves_toolchain_armv6_nerves_linux_gnueabihf-linux_x86_64-1.4.1-B107BAC.tar.xz
+RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/nerves_system_rpi3/releases/download/v1.14.0/nerves_system_rpi3-portable-1.14.0-F310513.tar.gz
+RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releases/download/v1.4.1/nerves_toolchain_armv7_nerves_linux_gnueabihf-linux_x86_64-1.4.1-4C8725A.tar.xz
+RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/nerves_system_rpi4/releases/download/v1.14.0/nerves_system_rpi4-portable-1.14.0-5CF0E29.tar.gz
+RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releases/download/v1.4.1/nerves_toolchain_aarch64_nerves_linux_gnu-linux_x86_64-1.4.1-6E027A9.tar.xz
+
 CMD ["/bin/bash"]
