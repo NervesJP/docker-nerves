@@ -16,7 +16,7 @@ RUN apt-get update && \
 
 # Install fwup (https://github.com/fhunleth/fwup)
 ENV FWUP_VERSION="1.8.3"
-RUN wget https://github.com/fhunleth/fwup/releases/download/v${FWUP_VERSION}/fwup_${FWUP_VERSION}_amd64.deb && \
+RUN wget https://github.com/fwup-home/fwup/releases/download/v${FWUP_VERSION}/fwup_${FWUP_VERSION}_amd64.deb && \
     apt-get install -y ./fwup_${FWUP_VERSION}_amd64.deb && \
     rm ./fwup_${FWUP_VERSION}_amd64.deb && \
     rm -rf /var/lib/apt/lists/*
@@ -25,6 +25,6 @@ RUN wget https://github.com/fhunleth/fwup/releases/download/v${FWUP_VERSION}/fwu
 RUN mix local.hex --force
 RUN mix local.rebar --force
 # Install Mix environment for Nerves
-RUN mix archive.install hex nerves_bootstrap 1.10.1 --force
+RUN mix archive.install hex nerves_bootstrap 1.10.2 --force
 
 CMD ["/bin/bash"]
