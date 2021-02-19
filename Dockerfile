@@ -36,4 +36,8 @@ RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releas
 RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/nerves_system_rpi4/releases/download/v1.14.0/nerves_system_rpi4-portable-1.14.0-5CF0E29.tar.gz
 RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releases/download/v1.4.1/nerves_toolchain_aarch64_nerves_linux_gnu-linux_x86_64-1.4.1-6E027A9.tar.xz
 
+RUN git clone https://github.com/NervesJP/nervesjp_ricc && \
+    cd nervesjp_ricc && \
+    mix deps.get
+
 CMD ["/bin/bash"]
