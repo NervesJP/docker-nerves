@@ -27,6 +27,9 @@ RUN mix local.rebar --force
 # Install Mix environment for Nerves
 RUN mix archive.install hex nerves_bootstrap 1.10.2 --force
 
+# Install Mix environment for Phoenix
+RUN mix archive.install hex phx_new 1.5.8 --force
+
 # Download archives of Nerves artifacts on Docker build process
 RUN mkdir -p ~/.nerves/dl
 RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/nerves_system_rpi0/releases/download/v1.14.0/nerves_system_rpi0-portable-1.14.0-261E47F.tar.gz
@@ -36,6 +39,7 @@ RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releas
 RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/nerves_system_rpi4/releases/download/v1.14.0/nerves_system_rpi4-portable-1.14.0-5CF0E29.tar.gz
 RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releases/download/v1.4.1/nerves_toolchain_aarch64_nerves_linux_gnu-linux_x86_64-1.4.1-6E027A9.tar.xz
 
+# Do mix deps.get to download hex packages in advance
 RUN git clone https://github.com/NervesJP/nervesjp_ricc_okinawa && \
     cd nervesjp_ricc_okinawa/nerves_ricc_okinawa && \
     mix deps.get
