@@ -29,6 +29,9 @@ RUN mix archive.install hex nerves_bootstrap 1.10.2 --force
 
 # Install Mix environment for Phoenix
 RUN mix archive.install hex phx_new 1.5.8 --force
+RUN curl -sL https://deb.nodesource.com/setup_15.x | bash \
+    && apt-get install -y nodejs
+RUN npm install npm@latest -g
 
 # Download archives of Nerves artifacts on Docker build process
 RUN mkdir -p ~/.nerves/dl
