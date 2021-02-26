@@ -44,4 +44,16 @@ RUN git clone https://github.com/NervesJP/nervesjp_ricc_okinawa && \
     cd nervesjp_ricc_okinawa/nerves_ricc_okinawa && \
     mix deps.get
 
+# COPY SSH keys (id_rsa / id_rsa.pub) to `/root/.ssh/` on Docker dev-container
+# Of course we understand that sharing SSH keys on GitHubit is dangerous, but
+# we employ this way to make the hands-on process more efficient.
+# When you want to generate your own keys, please run the follow.
+# $ ssh-keygen -t rsa -N "" -f .ssh/id_rsa
+RUN mkdir -p /root/.ssh
+COPY .ssh/id_rsa /root/.ssh/
+RUN chmod 600 /root/.ssh/id_rsa
+COPY .ssh/id_rsa.pub /root/.ssh/
+COPY .ssh/config /root/.ssh/
+RUN chmod 600 /root/.ssh/config
+
 CMD ["/bin/bash"]
