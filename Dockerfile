@@ -45,6 +45,8 @@ RUN wget -q -P ~/.nerves/dl/ https://github.com/nerves-project/toolchains/releas
 # Do mix deps.get to download hex packages in advance
 RUN git clone https://github.com/NervesJP/nervesjp_ricc_okinawa && \
     cd nervesjp_ricc_okinawa/nerves_ricc_okinawa && \
+    mix deps.get && \
+    cd ../../nervesjp_ricc_okinawa/phoenix_ricc_okinawa && \
     mix deps.get
 
 # COPY SSH keys (id_rsa / id_rsa.pub) to `/root/.ssh/` on Docker dev-container
