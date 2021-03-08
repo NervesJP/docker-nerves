@@ -61,13 +61,13 @@ Each version number is for a pre-built image on Docker Hub. If you built the Doc
 | Name | check method(s) | v0.2.4 | v0.2.3 | v0.2.2 | v0.2.1 | v0.2 | v0.1.x |
 |:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | Debian | `cat /etc/debian_version` | **10.8** | 10.7 | 10.7 | **10.7** | 10.6 | 10.6 |
-| Erlang/OTP | `erl -V` or <br> `mix hex.info` | **23.2.5** | 23.2.3 | **23.2.3** | **23.1.5** | 23.1.4 | 23.1.4 |
-| Elixir | `elixir -v` | 1.11.3-otp-23 | 1.11.3-otp-23 | **1.11.3-otp-23** | 1.11.2-otp-23 | 1.11.2-otp-23 | 1.11.2-otp-23 |
-| Nerves | `mix nerves.info` | **1.7.4** | **1.7.3** | **1.7.2** | 1.7.1 | **1.7.1** | 1.7.0 |
-| nerves_bootstrap | `ls ~/.mix/*` | **1.10.2** | 1.10.1 | 1.10.1 | **1.10.1** | 1.10.0 | 1.10.0 |
-| hex | `ls ~/.mix/*` | 0.21.1 | 0.21.1 | **0.21.1** | 0.20.6 | 0.20.6 | 0.20.6 |
-| rebar/rebar3 | `rebar -V` <br> `rebar3 -v` | 2.6.4/3.14.3 | 2.6.4/3.14.3 | 2.6.4/3.14.3 | 2.6.4/**3.14.3** | 2.6.4/3.14.2 | 2.6.4/3.14.2 |
-| fwup | `fwup --version` | 1.8.3 | 1.8.3 | 1.8.3 | **1.8.3** | 1.8.2 | 1.8.2 |
+| [Erlang/OTP](https://github.com/erlang/otp) | `erl -V` or <br> `mix hex.info` | **23.2.5** | 23.2.3 | **23.2.3** | **23.1.5** | 23.1.4 | 23.1.4 |
+| [Elixir](https://github.com/elixir-lang/elixir) | `elixir -v` | 1.11.3-otp-23 | 1.11.3-otp-23 | **1.11.3-otp-23** | 1.11.2-otp-23 | 1.11.2-otp-23 | 1.11.2-otp-23 |
+| [Nerves](https://github.com/nerves-project/nerves) | `mix nerves.info` | **1.7.4** | **1.7.3** | **1.7.2** | 1.7.1 | **1.7.1** | 1.7.0 |
+| [nerves_bootstrap](https://github.com/nerves-project/nerves_bootstrap) | `ls ~/.mix/*` | **1.10.2** | 1.10.1 | 1.10.1 | **1.10.1** | 1.10.0 | 1.10.0 |
+| [hex](https://github.com/hexpm/hex) | `ls ~/.mix/*` | 0.21.1 | 0.21.1 | **0.21.1** | 0.20.6 | 0.20.6 | 0.20.6 |
+| [rebar](https://github.com/rebar/rebar)/[rebar3](https://github.com/erlang/rebar3) | `rebar -V` <br> `rebar3 -v` | 2.6.4/3.14.3 | 2.6.4/3.14.3 | 2.6.4/3.14.3 | 2.6.4/**3.14.3** | 2.6.4/3.14.2 | 2.6.4/3.14.2 |
+| [fwup](https://github.com/fwup-home/fwup) | `fwup --version` | 1.8.3 | 1.8.3 | 1.8.3 | **1.8.3** | 1.8.2 | 1.8.2 |
 
 ## Tips
 
