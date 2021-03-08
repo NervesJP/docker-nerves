@@ -15,7 +15,7 @@ RUN apt-get update && \
 #    rm -rf /var/lib/apt/lists/*
 
 # Install fwup (https://github.com/fhunleth/fwup)
-ENV FWUP_VERSION="1.8.3"
+ENV FWUP_VERSION="1.8.4"
 RUN wget https://github.com/fwup-home/fwup/releases/download/v${FWUP_VERSION}/fwup_${FWUP_VERSION}_amd64.deb && \
     apt-get install -y ./fwup_${FWUP_VERSION}_amd64.deb && \
     rm ./fwup_${FWUP_VERSION}_amd64.deb && \
