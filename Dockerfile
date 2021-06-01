@@ -1,6 +1,6 @@
-# docker-elixir 1.11.3
+# docker-elixir 1.11.4
 # https://hub.docker.com/_/elixir
-FROM elixir:1.11.3
+FROM elixir:1.11.4
 
 ENV DEBCONF_NOWARNINGS yes
 
