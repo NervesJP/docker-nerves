@@ -58,7 +58,7 @@ Each version number is for a pre-built image on Docker Hub. If you built the Doc
 
 **Bold** means an update from the previous version.
 
-| Name | check method(s) | vnext | v0.3.0 | v0.2.6 | v0.2.5 | v0.2.4 | v0.2.3 | v0.2.2 | v0.2.1 | v0.2 | v0.1.x |
+| Name | check method(s) | v0.4.0 | v0.3.0 | v0.2.6 | v0.2.5 | v0.2.4 | v0.2.3 | v0.2.2 | v0.2.1 | v0.2 | v0.1.x |
 |:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Debian | `cat /etc/debian_version` | **12.11** | **10.11** | **10.9** | 10.8 | **10.8** | 10.7 | 10.7 | **10.7** | 10.6 | 10.6 |
 | [Erlang/OTP](https://github.com/erlang/otp) | `erl -V` or <br> `mix hex.info` | **27.3.4** | **24.1.7** | **23.3.4.1** | **23.2.7** | **23.2.5** | 23.2.3 | **23.2.3** | **23.1.5** | 23.1.4 | 23.1.4 |
